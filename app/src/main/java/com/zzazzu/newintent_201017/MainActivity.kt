@@ -17,6 +17,26 @@ class MainActivity : BaseActivity() {
 
         }
 
+        sendMessageBtn.setOnClickListener {
+
+            val inputMessage = messageEdt.text.toString()
+
+            val myIntent = Intent(this, MessageActivity::class.java)
+
+            myIntent.putExtra("message", inputMessage)
+
+            startActivity(myIntent)
+
+        }
+
+        changeNickNameBtn.setOnClickListener {
+
+            val myIntent=Intent(this,EditNickNameActivity::class.java)
+
+            startActivityforResult(myIntent, REQUEST_FOR_NICKNAME)
+
+        }
+
 
 
     }
